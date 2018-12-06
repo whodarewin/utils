@@ -11,6 +11,8 @@
     <properties>
         <hbase.version>1.2.4</hbase.version>
         <common.lang3.version>3.8.1</common.lang3.version>
+        <rocks.version>5.15.10</rocks.version>
+        <mapdb.version>3.0.7</mapdb.version>
     </properties>
 
     <dependencies>
@@ -25,5 +27,18 @@
             <artifactId>commons-lang3</artifactId>
             <version>${common.lang3.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.rocksdb</groupId>
+            <artifactId>rocksdbjni</artifactId>
+            <version>${rocks.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapdb</groupId>
+            <artifactId>mapdb</artifactId>
+            <version>${mapdb.version}</version>
+        </dependency>
+
     </dependencies>
 </project>
