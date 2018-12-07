@@ -13,6 +13,7 @@
         <common.lang3.version>3.8.1</common.lang3.version>
         <rocks.version>5.15.10</rocks.version>
         <mapdb.version>3.0.7</mapdb.version>
+        <reflections.version>0.9.11</reflections.version>
     </properties>
 
     <dependencies>
@@ -38,6 +39,12 @@
             <groupId>org.mapdb</groupId>
             <artifactId>mapdb</artifactId>
             <version>${mapdb.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>${reflections.version}</version>
         </dependency>
 
     </dependencies>

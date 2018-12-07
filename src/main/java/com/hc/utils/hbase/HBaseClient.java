@@ -1,6 +1,6 @@
 package com.hc.utils.hbase;
 
-import com.hc.utils.hbase.converter.IConverter;
+import com.hc.converter.IConverter;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.ImmutableTriple;
 import org.apache.commons.lang3.tuple.Pair;

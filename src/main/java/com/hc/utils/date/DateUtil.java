@@ -16,9 +16,20 @@ public class DateUtil {
      * @return
      * @throws ParseException
      */
-    private long to(String pattern, String value, TimeUnit unit) throws ParseException {
+    public long to(String pattern, String value, TimeUnit unit) throws ParseException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         Date date = simpleDateFormat.parse(value);
         return unit.convert(date.getTime(), TimeUnit.MILLISECONDS);
+    }
+
+    /**
+     * 将时间转换为可读字符串
+     * @param date 时间
+     * @param pattern 模式
+     * @return
+     */
+    public String toDateStr(Date date,String pattern){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        return simpleDateFormat.format(date);
     }
 }

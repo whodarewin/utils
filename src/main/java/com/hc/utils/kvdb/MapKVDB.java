@@ -1,11 +1,19 @@
 package com.hc.utils.kvdb;
 
-import jdk.internal.jline.internal.Preconditions;
+import com.google.common.base.Preconditions;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.Serializer;
 
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
+
+/**
+ * mapdb 检索
+ */
 public class MapKVDB implements IKVDB {
     private DB db;
     private BTreeMap<byte[],byte[]> map;
@@ -26,6 +34,29 @@ public class MapKVDB implements IKVDB {
 
     @Override
     public CloseableIterator<Pair<byte[], byte[]>> scan(byte[] start, byte[] end) {
-        return null;
+        Iterator<Map.Entry<byte[],byte[]>> iterator = this.map.entryIterator(start,true,end,false);
+        return new CloseableIterator<Pair<byte[], byte[]>>() {
+            @Override
+            public void close() {
+                //do nothing
+            }
+
+            @Override
+            public boolean hasNext() {
+                return iterator.hasNext();
+            }
+
+            @Override
+            public Pair<byte[], byte[]> next() {
+                Map.Entry<byte[],byte[]> entry = iterator.next();
+                Pair<byte[],byte[]> pair = new ImmutablePair<>(entry.getKey(),entry.getValue());
+                return pair;
+            }
+        };
+    }
+
+    @Override
+    public void close() throws IOException {
+        this.db.close();
     }
 }

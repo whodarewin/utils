@@ -1,4 +1,4 @@
-package com.hc.utils.hbase.converter;
+package com.hc.converter;
 
 public interface IConverter<T> {
     byte[] convert(T t);

@@ -7,6 +7,8 @@ import org.rocksdb.RocksDB;
 import org.rocksdb.RocksDBException;
 import org.rocksdb.RocksIterator;
 
+import java.io.IOException;
+
 public class RocksKVDB implements IKVDB {
     private RocksDB db;
 
@@ -54,5 +56,10 @@ public class RocksKVDB implements IKVDB {
                 return pair;
             }
         };
+    }
+
+    @Override
+    public void close() throws IOException {
+        this.db.close();
     }
 }
