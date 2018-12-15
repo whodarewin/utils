@@ -1,4 +1,4 @@
-package com.hc.converter;
+package com.hc.utils.converter;
 
 import org.apache.hadoop.hbase.util.Bytes;
 

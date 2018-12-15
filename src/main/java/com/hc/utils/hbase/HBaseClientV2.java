@@ -1,6 +1,6 @@
 package com.hc.utils.hbase;
 
-import com.hc.converter.IConverter;
+import com.hc.utils.converter.IConverter;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.hadoop.conf.Configuration;

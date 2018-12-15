@@ -1,4 +1,4 @@
-package com.hc.converter;
+package com.hc.utils.converter;
 
 public interface IConverter<T> {
     byte[] convert(T t);

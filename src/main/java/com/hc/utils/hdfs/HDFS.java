@@ -1,4 +1,4 @@
-package com.hc.hdfs;
+package com.hc.utils.hdfs;
 
 
 import org.apache.hadoop.fs.FileSystem;
