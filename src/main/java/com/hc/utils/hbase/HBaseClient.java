@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * todo:只做orm客户端，省略掉column family和column 这种属性
  * hbase 客户端
  */
 public class HBaseClient<K,V> {

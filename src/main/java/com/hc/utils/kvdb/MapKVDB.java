@@ -6,8 +6,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.mapdb.BTreeMap;
 import org.mapdb.DB;
 import org.mapdb.Serializer;
-
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -56,7 +54,7 @@ public class MapKVDB implements IKVDB {
     }
 
     @Override
-    public void close() throws IOException {
+    public void close() {
         this.db.close();
     }
 }
