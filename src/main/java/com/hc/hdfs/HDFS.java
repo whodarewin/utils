@@ -22,6 +22,12 @@ public class HDFS {
         return this;
     }
 
+    public HDFS create(String url) throws IOException {
+        Path path = new Path(url);
+        system.create(path);
+        return this;
+    }
+
 
     public static void main(String[] args) throws IOException {
         HDFS.init("hdfs://localhost:8020").delete("hdfs://localhost:8020/hbase");
