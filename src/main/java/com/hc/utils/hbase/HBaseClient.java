@@ -9,6 +9,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.CellScanner;
 import org.apache.hadoop.hbase.HConstants;
+import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.util.Bytes;
 
@@ -24,30 +25,30 @@ public class HBaseClient<K,V> {
 
     private String zookeeperHost;
     private String zookeeperNodePath;
-    private String tableName;
+    private TableName tableName;
     private IConverter<K> keyConverter;
     private IConverter<V> valueConverter;
-    private ThreadLocal<HTableInterface> htables = new ThreadLocal<HTableInterface>();
-    private HConnection hConnection;
+    private ThreadLocal<Table> htables = new ThreadLocal<Table>();
+    private Connection hConnection;
     private long ttl;
 
     public HBaseClient(String zookeeperHost, String zookeeperNodePath, String tableName,
                        IConverter<K> keyConverter, IConverter<V> valueConverter, long ttl) throws IOException {
         this.zookeeperHost = zookeeperHost;
         this.zookeeperNodePath = zookeeperNodePath;
-        this.tableName = tableName;
+        this.tableName = TableName.valueOf(tableName);
         this.keyConverter = keyConverter;
         this.valueConverter = valueConverter;
         Configuration configuration = new Configuration();
         configuration.set(HConstants.ZOOKEEPER_QUORUM,zookeeperHost);
         configuration.set(HConstants.ZOOKEEPER_ZNODE_PARENT,zookeeperNodePath);
-        hConnection = HConnectionManager.createConnection(configuration);
+        hConnection = ConnectionFactory.createConnection(configuration);
         this.ttl = ttl;
     }
 
-    private HTableInterface getHTable() throws IOException {
+    private Table getHTable() throws IOException {
         //double check not needed
-        HTableInterface hTableInterface = htables.get();
+        Table hTableInterface = htables.get();
         if(hTableInterface == null){
             hTableInterface = hConnection.getTable(tableName);
             htables.set(hTableInterface);
