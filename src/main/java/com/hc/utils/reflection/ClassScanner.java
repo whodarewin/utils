@@ -1,4 +1,4 @@
-package com.hc.utils.reflaction;
+package com.hc.utils.reflection;
 
 import com.google.common.base.Preconditions;
 import org.reflections.Reflections;
