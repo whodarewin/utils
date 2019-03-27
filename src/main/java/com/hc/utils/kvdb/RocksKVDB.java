@@ -9,7 +9,7 @@ import org.rocksdb.RocksIterator;
 
 import java.io.IOException;
 
-public class RocksKVDB implements IKVDB {
+public class RocksKVDB implements IKVDB,Scanable {
     private RocksDB db;
 
     /**

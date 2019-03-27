@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * mapdb 检索
  */
-public class MapKVDB implements IKVDB {
+public class MapKVDB implements IKVDB,Scanable {
     private DB db;
     private BTreeMap<byte[],byte[]> map;
     public MapKVDB(DB db){
