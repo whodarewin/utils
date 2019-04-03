@@ -14,7 +14,7 @@
         <rocks.version>5.15.10</rocks.version>
         <mapdb.version>3.0.7</mapdb.version>
         <reflections.version>0.9.11</reflections.version>
-        <spring.core>4.2.9.RELEASE</spring.core>
+        <spring.core>4.3.17.RELEASE</spring.core>
     </properties>
 
     <dependencies>
@@ -103,6 +103,14 @@
             <artifactId>ehcache</artifactId>
             <version>3.7.0</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
 
     </dependencies>
 
