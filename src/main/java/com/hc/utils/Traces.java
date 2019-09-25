@@ -1,6 +1,7 @@
 package com.hc.utils;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -14,7 +15,7 @@ import java.util.function.Function;
 public class Traces {
 
     private static ThreadLocal<Boolean> TURN = ThreadLocal.withInitial(() -> Boolean.FALSE);
-    private static ThreadLocal<Map<String,Object>> TRACE = ThreadLocal.withInitial(HashMap::new);
+    private static ThreadLocal<Map<String,Object>> TRACE = ThreadLocal.withInitial(LinkedHashMap::new);
 
     public static void turnOn(){
         TURN.set(Boolean.TRUE);
@@ -45,6 +46,6 @@ public class Traces {
     }
 
     public static void remove(){
-        TRACE.remove();
+        TRACE.get().clear();
     }
 }
