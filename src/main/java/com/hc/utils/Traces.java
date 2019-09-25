@@ -38,7 +38,7 @@ public class Traces {
     }
 
     public static Map<String,Object> get(){
-        return TRACE.get();
+        return new HashMap<>(TRACE.get());
     }
 
     public static Object get(String key){
