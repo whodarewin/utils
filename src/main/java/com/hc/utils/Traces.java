@@ -48,4 +48,16 @@ public class Traces {
     public static void remove(){
         TRACE.get().clear();
     }
+
+    public static Runnable warp(Runnable runnable){
+        Boolean turn = TURN.get();
+        Map<String,Object> trace = TRACE.get();
+        return () -> {
+            TURN.set(turn);
+            TRACE.set(trace);
+            runnable.run();
+            TURN.remove();
+            TRACE.remove();
+        };
+    }
 }

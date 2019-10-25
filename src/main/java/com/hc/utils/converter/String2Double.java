@@ -1,6 +1,7 @@
 package com.hc.utils.converter;
 
-import com.immomo.mcf.util.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * String2Double
