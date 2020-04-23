@@ -1,7 +1,5 @@
-import com.sankuai.meituan.banma.thrift.pkg.vo.waybill.BmWaybillView;
-import org.apache.thrift.TDeserializer;
-import org.apache.thrift.TException;
-import org.apache.thrift.TSerializer;
+package com.hc.utils;
+
 import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 
 import java.lang.reflect.*;
@@ -140,8 +138,9 @@ public class ObjectCreatUtil {
         return map;
     }
 
-    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException, InstantiationException, TException {
-        Test test = AddValueUtil.getObject(Test.class);
+    public static void main(String[] args) throws InvocationTargetException, IllegalAccessException, InstantiationException {
+        Test test = ObjectCreatUtil.getObject(Test.class);
+        System.out.println((1L << 13)- 1L);
     }
 
     public static class Test{
