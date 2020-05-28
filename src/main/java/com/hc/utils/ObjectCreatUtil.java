@@ -7,6 +7,7 @@ import java.util.*;
 
 public class ObjectCreatUtil {
 
+    private static final String SET_METHOD_PREFIX = "set";
 
     public static <T> T getObject(Class<T> clazz) throws InvocationTargetException, IllegalAccessException, InstantiationException {
 
@@ -20,7 +21,7 @@ public class ObjectCreatUtil {
             Type[] parameterTypes = method.getGenericParameterTypes();
 
             System.out.println(method.getName());
-            if(methodName.startsWith("set")){
+            if(methodName.startsWith(SET_METHOD_PREFIX)){
                 Parameter[] parameters = method.getParameters();
                 if(parameters.length != 1){
                     continue;
