@@ -21,7 +21,7 @@
     </build>
 
     <properties>
-        <hbase.version>2.1.1</hbase.version>
+        <hbase.version>2.3.0</hbase.version>
         <common.lang3.version>3.8.1</common.lang3.version>
         <rocks.version>5.15.10</rocks.version>
         <mapdb.version>3.0.7</mapdb.version>
@@ -196,7 +196,12 @@
             <version>1.2.13</version>
         </dependency>
         <!-- Bean Validation end -->
-
+        <!-- https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava -->
+        <dependency>
+            <groupId>io.reactivex.rxjava2</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>2.2.19</version>
+        </dependency>
 
     </dependencies>
 
