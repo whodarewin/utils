@@ -14,7 +14,7 @@
         <rocks.version>5.15.10</rocks.version>
         <mapdb.version>3.0.7</mapdb.version>
         <reflections.version>0.9.11</reflections.version>
-        <spring.core>5.2.0.RELEASE</spring.core>
+        <spring.core>5.3.18</spring.core>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <bolt.version>1.6.4</bolt.version>
     </properties>
